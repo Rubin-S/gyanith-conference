@@ -2,55 +2,64 @@
 import React, { useCallback } from "react";
 import { motion } from "framer-motion";
 import { 
-  MdPerson, 
   MdSchool, 
   MdBusiness, 
   MdPublic, 
   MdCheckCircle, 
   MdArrowForward,
+  MdGroups,
+  MdAccountBalance,
   MdCreditCard,
-  MdCloudUpload,
-  MdAccessTime
+  MdReceipt
 } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
-// --- DATA ---
-const TIERS = [
+// --- DATA (Strictly from Brochure Image 2) ---
+const FEES = [
   {
     id: "student",
     title: "Student / Scholar",
     icon: <MdSchool />,
-    priceIn: "₹8,000",
-    priceOut: "₹6,000", // Virtual
-    features: ["Access to all sessions", "Conference Kit", "Certificate of Participation", "Lunch & Refreshments"],
-    color: "border-primary-200 bg-white"
+    price: "₹ 500",
+    subtitle: "Indian Delegate",
+    features: ["Paper Presentation", "Conference Kit", "Certificate", "Lunch & Refreshments"],
+    highlight: false
   },
   {
-    id: "faculty",
-    title: "Faculty / Researcher",
-    icon: <MdPerson />,
-    priceIn: "₹10,000",
-    priceOut: "₹8,000",
-    features: ["Access to all sessions", "Conference Kit", "Certificate of Presentation", "Networking Dinner"],
-    color: "border-primary-500 bg-primary-50 shadow-xl scale-105 z-10" // Highlighted tier
+    id: "academia",
+    title: "Academia",
+    icon: <MdAccountBalance />,
+    price: "₹ 800",
+    subtitle: "Indian Delegate",
+    features: ["Paper Presentation", "Conference Kit", "Certificate", "Networking Session"],
+    highlight: true // Giving this a subtle visual pop
   },
   {
     id: "industry",
-    title: "Industry Professional",
+    title: "Industry",
     icon: <MdBusiness />,
-    priceIn: "₹24,000",
-    priceOut: "₹20,000",
-    features: ["Access to all sessions", "VIP Seating", "Company Logo on Website", "Networking Dinner"],
-    color: "border-secondary-400 bg-white"
+    price: "₹ 1,000",
+    subtitle: "Indian Delegate",
+    features: ["Paper Presentation", "Company Representation", "VIP Seating", "Networking Dinner"],
+    highlight: false
   },
   {
     id: "foreign",
-    title: "Foreign Delegate",
+    title: "Foreign Delegates",
     icon: <MdPublic />,
-    priceIn: "$250",
-    priceOut: "$200",
-    features: ["Full Access (Hybrid)", "Digital Certificate", "Proceedings Access", "International Networking"],
-    color: "border-neutral-200 bg-neutral-50"
+    price: "25 USD",
+    subtitle: "International",
+    features: ["Full Access", "Digital Certificate", "Proceedings", "International Networking"],
+    highlight: false
+  },
+  {
+    id: "attendee",
+    title: "Attendee",
+    icon: <MdGroups />,
+    price: "₹ 500 / 10 USD",
+    subtitle: "Indian / Foreign",
+    features: ["Access to Sessions", "Participation Certificate", "Observer Status", "Knowledge Exchange"],
+    highlight: false
   }
 ];
 
@@ -71,130 +80,157 @@ const cardVar = {
 export default function Registration() {
   const navigate = useNavigate();
 
-  const handleRegister = useCallback((category, mode, price) => {
-    navigate("/registration/form", { state: { selection: { category, mode, price } } });
+  const handleRegister = useCallback((category, price) => {
+    // Navigate to a form page or payment gateway logic
+    console.log(`Registering for ${category} at ${price}`);
+    navigate("/contact-us"); // Redirecting to contact for now as per flow
   }, [navigate]);
 
   return (
-    <div className="bg-neutral-50 min-h-screen pt-24 pb-20">
+    <div className="bg-white min-h-screen font-sans text-slate-800 selection:bg-yellow-200 selection:text-purple-900">
       
       {/* ---------------------------------------------------------------------------
-          HEADER & EARLY BIRD
+          HERO SECTION
+          Style: Deep Purple & Gold
       --------------------------------------------------------------------------- */}
-      <div className="container mx-auto px-6 mb-16 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Early Bird Banner */}
-          <div className="inline-flex items-center gap-2 bg-secondary-100 border border-secondary-300 text-secondary-900 px-4 py-1.5 rounded-full text-sm font-bold mb-6 animate-pulse">
-            <MdAccessTime className="text-lg" />
-            Early Bird Discount ends Jan 15, 2026
-          </div>
+      <div className="relative pt-32 pb-20 bg-[#3d348b] text-white overflow-hidden">
+        {/* Abstract Background */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl mix-blend-overlay"></div>
+            <div className="absolute bottom-0 left-10 w-64 h-64 bg-yellow-500 rounded-full blur-3xl mix-blend-overlay"></div>
+        </div>
 
-          <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-primary-900 mb-4">
-            Secure Your Spot
-          </h1>
-          <p className="text-gray-600 max-w-xl mx-auto text-lg">
-            Choose the plan that fits your role. All registrations include access to keynote sessions and technical tracks.
-          </p>
-        </motion.div>
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-block px-4 py-1 mb-6 border border-yellow-400/30 bg-yellow-400/10 rounded-full">
+               <span className="text-yellow-400 font-bold tracking-widest uppercase text-xs">
+                 Registration Open
+               </span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-serif font-medium mb-6">
+              Secure Your Spot
+            </h1>
+            <p className="max-w-2xl mx-auto text-lg md:text-xl text-indigo-100 font-light leading-relaxed">
+              Select your participation category below. <br/>
+              Registration includes access to all technical tracks and keynote sessions.
+            </p>
+          </motion.div>
+        </div>
       </div>
 
       {/* ---------------------------------------------------------------------------
           PRICING CARDS
       --------------------------------------------------------------------------- */}
-      <div className="container mx-auto px-6 mb-24">
+      <div className="container mx-auto px-6 py-24">
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
           variants={containerVar}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {TIERS.map((tier) => (
+          {FEES.map((tier) => (
             <motion.div 
               key={tier.id}
               variants={cardVar}
-              className={`rounded-3xl p-6 border-2 flex flex-col h-full relative ${tier.color}`}
+              className={`relative flex flex-col justify-between rounded-2xl p-6 border transition-all duration-300 group
+                ${tier.highlight 
+                  ? 'bg-white border-purple-200 shadow-xl scale-105 z-10' 
+                  : 'bg-slate-50 border-slate-100 hover:bg-white hover:shadow-lg hover:border-purple-100'
+                }
+              `}
             >
-              {/* Icon Header */}
-              <div className="mb-6">
-                <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-2xl text-primary-600 mb-4 border border-gray-100">
+              {tier.highlight && (
+                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-yellow-400 text-slate-900 text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow-sm">
+                   Most Popular
+                 </div>
+              )}
+
+              <div>
+                {/* Header */}
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4 transition-colors
+                   ${tier.highlight ? 'bg-purple-100 text-purple-700' : 'bg-white text-slate-400 group-hover:bg-purple-50 group-hover:text-purple-600'}
+                `}>
                   {tier.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">{tier.title}</h3>
-              </div>
+                
+                <h3 className="text-lg font-bold text-slate-900 mb-1">{tier.title}</h3>
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-6">{tier.subtitle}</p>
 
-              {/* Pricing */}
-              <div className="mb-6 space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500 font-medium">Physical</span>
-                  <span className="text-2xl font-extrabold text-primary-700">{tier.priceIn}</span>
+                {/* Price */}
+                <div className="mb-8">
+                  <span className={`text-2xl font-serif font-bold ${tier.highlight ? 'text-purple-700' : 'text-slate-800'}`}>
+                    {tier.price}
+                  </span>
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500 font-medium">Virtual</span>
-                  <span className="text-xl font-bold text-gray-400">{tier.priceOut}</span>
-                </div>
+
+                {/* Features */}
+                <ul className="space-y-3 mb-8">
+                  {tier.features.map((feat, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs font-medium text-slate-600 leading-snug">
+                      <MdCheckCircle className={`text-sm flex-shrink-0 mt-0.5 ${tier.highlight ? 'text-yellow-500' : 'text-slate-300 group-hover:text-purple-400'}`} />
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              {/* Features List */}
-              <ul className="space-y-3 mb-8 flex-1">
-                {tier.features.map((feat, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                    <MdCheckCircle className="text-secondary-500 mt-0.5 flex-shrink-0" />
-                    {feat}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Action Buttons */}
-              <div className="grid grid-cols-2 gap-3 mt-auto">
-                <button 
-                  onClick={() => handleRegister(tier.title, 'Physical', tier.priceIn)}
-                  className="py-2 rounded-lg bg-primary-600 text-white text-sm font-semibold hover:bg-primary-700 transition-colors"
-                >
-                  Attend Live
-                </button>
-                <button 
-                  onClick={() => handleRegister(tier.title, 'Virtual', tier.priceOut)}
-                  className="py-2 rounded-lg border border-primary-200 text-primary-700 text-sm font-semibold hover:bg-primary-50 transition-colors"
-                >
-                  Virtual
-                </button>
-              </div>
+              {/* Action */}
+              <button 
+                onClick={() => handleRegister(tier.title, tier.price)}
+                className={`w-full py-3 rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2
+                  ${tier.highlight 
+                    ? 'bg-purple-600 text-white hover:bg-purple-700 shadow-lg shadow-purple-900/20' 
+                    : 'bg-white border border-slate-200 text-slate-600 hover:border-slate-800 hover:text-slate-900'
+                  }
+                `}
+              >
+                Select Plan <MdArrowForward />
+              </button>
             </motion.div>
           ))}
         </motion.div>
       </div>
 
       {/* ---------------------------------------------------------------------------
-          HOW TO REGISTER (Visual Steps)
+          PROCESS STEPS
       --------------------------------------------------------------------------- */}
-      <section className="bg-white border-t border-gray-100 py-20">
+      <section className="bg-slate-50 border-t border-slate-200 py-24">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-heading font-bold text-gray-900">Registration Process</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-serif font-bold text-slate-900 mb-4">Registration Process</h2>
+            <div className="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
           </div>
 
-          <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-8 relative">
-            {/* Connector Line (Desktop) */}
-            <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-100 -z-10 -translate-y-1/2 rounded-full"></div>
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+             {/* Connector Line (Desktop) */}
+             <div className="hidden md:block absolute top-12 left-1/6 right-1/6 h-0.5 bg-slate-200 -z-10"></div>
 
-            {[
-              { title: "Select Plan", icon: <MdCheckCircle />, desc: "Choose your category above." },
-              { title: "Make Payment", icon: <MdCreditCard />, desc: "Pay via Bank Transfer / UPI." },
-              { title: "Upload Receipt", icon: <MdCloudUpload />, desc: "Attach proof in the form." },
-            ].map((step, i) => (
-              <div key={i} className="flex-1 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center md:text-left flex flex-col items-center md:items-start">
-                <div className="w-12 h-12 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center text-2xl mb-4">
-                  {step.icon}
-                </div>
-                <h4 className="text-lg font-bold text-gray-900 mb-1">{step.title}</h4>
-                <p className="text-sm text-gray-500">{step.desc}</p>
-              </div>
-            ))}
+             {[
+                { title: "Choose Category", icon: <MdCheckCircle />, desc: "Identify your participation type from the options above." },
+                { title: "Complete Payment", icon: <MdCreditCard />, desc: "Proceed with the payment via the secure gateway." },
+                { title: "Receive Confirmation", icon: <MdReceipt />, desc: "Get your registration receipt and conference kit details." },
+             ].map((step, i) => (
+               <motion.div 
+                 key={i}
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 transition={{ delay: i * 0.2 }}
+                 className="bg-white p-8 rounded-2xl border border-slate-100 text-center shadow-sm relative group hover:-translate-y-2 transition-transform duration-300"
+               >
+                 <div className="w-16 h-16 mx-auto bg-slate-50 rounded-full flex items-center justify-center text-3xl text-slate-400 mb-6 group-hover:bg-purple-50 group-hover:text-purple-600 transition-colors border-4 border-white shadow-lg">
+                    {step.icon}
+                 </div>
+                 <h4 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h4>
+                 <p className="text-slate-500 text-sm leading-relaxed">{step.desc}</p>
+               </motion.div>
+             ))}
           </div>
         </div>
       </section>

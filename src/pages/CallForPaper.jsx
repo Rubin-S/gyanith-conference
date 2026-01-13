@@ -4,120 +4,60 @@ import { motion } from "framer-motion";
 import { 
   MdSmartToy, 
   MdCloudSync, 
-  MdPrint, 
   MdViewInAr, 
-  MdStorage, 
-  MdPsychology,
   MdDateRange,
   MdAttachMoney,
   MdArrowForward,
-  MdFileDownload
+  MdFileDownload,
+  MdComputer,
+  MdSettingsSuggest,
+  MdWifiTethering
 } from "react-icons/md";
 
-// --- DATA: EXTRACTED STRICTLY FROM BROCHURE IMAGE 2 ---
+// --- DATA: UPDATED WITH NEW TOPICS ---
 
 const TRACKS = [
   {
     id: 1,
-    title: "Robotics & Automation",
-    icon: <MdSmartToy />,
+    title: "Digital Innovation & Computing",
+    icon: <MdComputer />, // Icon for Computing
     topics: [
-      "Automation and Process Control",
-      "Autonomous Robots",
-      "Human Robot Collaboration",
-      "Industrial Robots",
-      "Intelligent Robots",
-      "Mechatronics & Mechanisms",
-      "Modelling And Simulation",
-      "Multi Robot Systems",
-      "Trajectory and Path Planning",
-      "Sensors Fusion"
+      "Digital AR/VR, Metaverse & Immersive Computing Environments",
+      "Digital Cybersecurity & Ethical Hacking Innovations",
+      "Digital Data Science, Big Data Analytics & Decision Intelligence",
+      "Digital Quantum Computing, Cryptography & Emerging Paradigms",
+      "Digital Robotics, Autonomous Systems & Human–Machine Interaction"
     ]
   },
   {
     id: 2,
-    title: "Industrial IoT & Cloud",
-    subtitle: "& Manufacturing",
-    icon: <MdCloudSync />,
+    title: "Smart Mechanical Systems",
+    icon: <MdSettingsSuggest />, // Icon for Mechanical
     topics: [
-      "Supply chain 4.0",
-      "Resources management",
-      "Cloud-based smart manufacturing",
-      "Cyber-physical systems",
-      "Industrial case studies",
-      "Industry 4.0 and production economics",
-      "Lean/Agile Manufacturing",
-      "Optimization and decision making",
-      "Virtual Manufacturing"
+      "Cybersecurity in Smart Mechanical & Manufacturing Systems",
+      "Edge Computing & Industrial AI for Mechanical Applications",
+      "Human-Centered Digital Engineering & Ergonomic Analytics",
+      "Digital Reliability, Safety & Risk Assessment",
+      "Sustainable Digital Engineering",
+      "Green Manufacturing Technologies"
     ]
   },
   {
     id: 3,
-    title: "Additive Manufacturing",
-    icon: <MdPrint />,
+    title: "Electronics & Communication",
+    icon: <MdWifiTethering />, // Icon for Comms/Electronics
     topics: [
-      "Process Optimization",
-      "Modelling simulation",
-      "Advance in post processing",
-      "3D Printing of complex geometries",
-      "Design for Additive Manufacturing",
-      "Testing and Characterization",
-      "Material minimization",
-      "Reverse engineering"
-    ]
-  },
-  {
-    id: 4,
-    title: "Immersive Engineering",
-    icon: <MdViewInAr />,
-    topics: [
-      "Augmented Reality",
-      "Virtual Reality",
-      "Computerized Simulation",
-      "Spatial Sensing",
-      "Mixed Reality",
-      "Behaviorism",
-      "3D Displays",
-      "3D Audio & 3D Games",
-      "Haptics"
-    ]
-  },
-  {
-    id: 5,
-    title: "Big Data & IoT",
-    icon: <MdStorage />,
-    topics: [
-      "Algorithms",
-      "Cyber-physical System",
-      "IoT: Smart Devices",
-      "Performance Evaluation and Modelling",
-      "Information Retrieval Techniques",
-      "Big Data Acquisition",
-      "Integration and Cleaning",
-      "Big Data Analytics"
-    ]
-  },
-  {
-    id: 6,
-    title: "Artificial Intelligence",
-    icon: <MdPsychology />,
-    topics: [
-      "Machine learning",
-      "Image processing",
-      "Video Processing",
-      "AI for cyber security",
-      "Audio Analysis",
-      "Advances in AI techniques",
-      "AI Based Optimization for industry",
-      "Deep Learning",
-      "Text Analysis"
+      "Digital Healthcare & Biomedical Technologies",
+      "Digital VLSI, Semiconductors & Chip Design Innovation",
+      "Digital Signal Processing, AI & Intelligent Systems",
+      "Digital Wireless & 6G Communication Technologies"
     ]
   }
 ];
 
 const DATES = [
   { label: "Paper Submission Deadline", date: "20th Feb, 2026" },
-  { label: "Acceptance Notification", date: "20th Feb, 2026" }, // As per brochure
+  { label: "Acceptance Notification", date: "20th Feb, 2026" },
   { label: "Registration Deadline", date: "22nd Feb, 2026" },
   { label: "Conference Dates", date: "27th - 28th Feb, 2026", highlight: true },
 ];
@@ -170,7 +110,7 @@ export default function CallForPapers() {
               Call for Papers
             </h1>
             <p className="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 font-light leading-relaxed">
-              We invite researchers, academicians, and industry professionals to submit original research advancing the field of <span className="text-yellow-400 font-medium">Industry 4.0 Technologies</span>.
+              We invite researchers, academicians, and industry professionals to submit original research advancing the field of <span className="text-yellow-400 font-medium">Digital Innovation & Engineering</span>.
             </p>
           </motion.div>
         </div>
@@ -184,6 +124,9 @@ export default function CallForPapers() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-serif font-bold text-slate-900 mb-3">Conference Tracks</h2>
             <div className="h-1 w-24 bg-purple-600 mx-auto rounded-full"></div>
+            <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+                Exploring the intersection of Computing, Mechanical Systems, and Communication Technologies.
+            </p>
           </div>
 
           <motion.div 
@@ -207,11 +150,10 @@ export default function CallForPapers() {
                     <h3 className="text-xl font-bold text-slate-900 leading-tight group-hover:text-purple-700 transition-colors">
                       {track.title}
                     </h3>
-                    {track.subtitle && <span className="text-sm text-slate-500">{track.subtitle}</span>}
                   </div>
                 </div>
                 
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {track.topics.map((topic, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-400 flex-shrink-0" />

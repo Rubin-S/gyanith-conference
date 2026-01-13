@@ -65,9 +65,9 @@ export default function Header() {
               
               {/* Logo Area */}
               <NavLink to="/" className="flex items-center gap-3 group">
-                <img src={logo} alt="ICRAIT Logo" className="h-12 w-auto object-contain transition-transform group-hover:scale-105" />
+                <img src={logo} alt="ICDTSES Logo" className="h-12 w-auto object-contain transition-transform group-hover:scale-105" />
                 <div className="hidden xl:block">
-                  <span className="block font-heading font-bold text-primary-900 text-lg leading-none tracking-tight">ICRAIT</span>
+                  <span className="block font-heading font-bold text-primary-900 text-lg leading-none tracking-tight">ICDTSES</span>
                   <span className="block text-xs font-semibold text-secondary-600 tracking-wider">2026</span>
                 </div>
               </NavLink>
@@ -112,28 +112,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* ---------------------------------------------------------------------------
-            SECTION 2: UTILITY BAR (Purple Background)
-            This is now visually SECOND (Below the white nav).
-        --------------------------------------------------------------------------- */}
-        {/* <div className="hidden lg:block bg-primary-900 text-white text-xs py-2">
-          Added 'container' here to match the alignment of the logo above
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <div className="flex gap-6">
-              <div className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <MdCalendarToday className="text-sm"/> Feb 27-28, 2026
-              </div>
-              <div className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <MdLocationOn className="text-sm"/> NIT Puducherry, Karaikal
-              </div>
-            </div>
-            <div className="flex gap-6">
-              <a href="mailto:icrait2026@nitpy.ac.in" className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <MdEmail className="text-sm"/> icrait2026@nitpy.ac.in
-              </a>
-            </div>
-          </div>
-        </div> */}
       </header>
 
       {/* ---------------------------------------------------------------------------

@@ -87,7 +87,7 @@ export default function ImportantDates() {
               Conference Schedule
             </h1>
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-indigo-100 font-light leading-relaxed">
-              Stay ahead of the curve. Mark these critical dates to ensure your participation in ICRAIT-2026.
+              Stay ahead of the curve. Mark these critical dates to ensure your participation in ICDTSES-2026.
             </p>
           </motion.div>
         </div>

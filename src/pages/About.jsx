@@ -4,12 +4,9 @@ import {
   AcademicCapIcon, 
   LightBulbIcon, 
   GlobeAltIcon, 
-  SparklesIcon 
+  SparklesIcon,
+  ChipIcon 
 } from "@heroicons/react/outline";
-
-// --- Assets ---
-// You can use the NITPY logo here if available, otherwise we use icons
-// import nitLogo from "../assets/logo/NITPY.png";
 
 // --- Animation Variants ---
 const fadeInUp = {
@@ -49,26 +46,26 @@ export default function About() {
             <div className="flex items-center gap-3 mb-6">
               <span className="h-px w-12 bg-yellow-400"></span>
               <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm">
-                About ICRAIT-2026
+                About ICDTSES-2026
               </span>
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium leading-tight mb-8">
-              Driving the Future of <br/>
+              Pioneering <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600">
-                Industry 4.0
+                Smart Engineering
               </span>
             </h1>
             
             <p className="text-lg md:text-xl text-indigo-100 leading-relaxed max-w-2xl border-l-2 border-indigo-400/30 pl-6">
-              An international platform promoting multidisciplinary collaboration and strengthening the integration of research and education.
+              A premier global forum at the intersection of digital innovation and human-centered engineering systems.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* --------------------------------------------------
-         SECTION 2: ABOUT THE CONFERENCE (From Brochure)
+         SECTION 2: ABOUT THE CONFERENCE (Updated Description)
          Style: Clean Editorial Layout
          -------------------------------------------------- */}
       <section className="py-24 container mx-auto px-6">
@@ -89,8 +86,7 @@ export default function About() {
               The Conference
             </h2>
             <p className="text-slate-500 font-medium">
-              Departments of Mechanical & CSE<br/>
-              NIT Puducherry
+              Digital Technologies & <br/> Smart Engineering Systems
             </p>
           </motion.div>
 
@@ -103,25 +99,25 @@ export default function About() {
             variants={fadeInUp}
           >
             <p className="text-lg md:text-xl text-slate-700 leading-relaxed font-light">
-              The <strong className="font-semibold text-purple-900">International Conference on Recent Advances in Industry 4.0 Technologies (ICRAIT–2026)</strong> is organized by the Departments of Mechanical Engineering and Computer Science & Engineering at the National Institute of Technology, Puducherry, India.
+              The <strong className="font-semibold text-purple-900">International Conference on Digital Technologies and Smart Engineering Systems (ICDTSES)</strong> serves as a premier platform for researchers, academicians, industry professionals, and policymakers to exchange ideas and present cutting-edge research.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-shadow duration-300">
                   <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                    <GlobeAltIcon className="w-5 h-5 text-purple-600"/> Global Platform
+                    <ChipIcon className="w-5 h-5 text-purple-600"/> Emerging Tech
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    Serving as an international nexus for researchers, academicians, and industry professionals to share and discuss recent developments.
+                    Focusing on AI, Data Science, Cybersecurity, Cyber-physical systems, Robotics, AR/VR, Quantum Computing, and Intelligent Manufacturing.
                   </p>
                </div>
                
                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-shadow duration-300">
                   <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                    <LightBulbIcon className="w-5 h-5 text-purple-600"/> Core Mission
+                    <GlobeAltIcon className="w-5 h-5 text-purple-600"/> Global Impact
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                     Promoting multidisciplinary collaboration and strengthening the integration of research and education in mechanical engineering and computer science.
+                     Addressing contemporary challenges in reliability, safety, sustainability, and digital transformation at a global scale.
                   </p>
                </div>
             </div>
@@ -142,13 +138,13 @@ export default function About() {
             className="max-w-4xl mx-auto"
         >
              <h3 className="text-2xl md:text-3xl font-serif italic text-slate-300 leading-relaxed">
-              "We aim to share recent developments in Industry 4.0 enabling technologies, promoting multidisciplinary collaboration."
+              "Fostering interdisciplinary collaboration to contribute to the advancement of next-generation smart engineering solutions."
             </h3>
         </motion.div>
       </section>
 
       {/* --------------------------------------------------
-         SECTION 4: ABOUT THE INSTITUTE (From Brochure)
+         SECTION 4: ABOUT THE INSTITUTE (Unchanged)
          Style: Reversed Layout, Gold/Warm tones
          -------------------------------------------------- */}
       <section className="py-24 container mx-auto px-6">
@@ -166,7 +162,7 @@ export default function About() {
               <AcademicCapIcon className="w-8 h-8" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              The Institute
+              About Institute
             </h2>
             <div className="h-1 w-20 bg-yellow-400 rounded-full"></div>
           </motion.div>
@@ -180,6 +176,7 @@ export default function About() {
             variants={fadeInUp}
           >
              <h3 className="text-2xl font-bold text-slate-800">National Institute of Technology Puducherry (NITPY)</h3>
+             
              
              <p className="text-slate-600 leading-relaxed">
                One of the thirty-one National Institutes of Technology in India, established by the Government of India in 2009 under the Eleventh Five-Year Plan (2007–2012).

@@ -131,11 +131,11 @@ export default function SubmissionPage() {
            <div className="flex gap-4 items-start">
               <MdWarning className="text-yellow-500 text-2xl flex-shrink-0 mt-1" />
               <div>
-                 <h4 className="font-bold text-slate-900 mb-2">Prerequisite for Full Paper</h4>
+                 <h4 className="font-bold text-slate-900 mb-2">Prerequisite for Extended Abstracts</h4>
                  <p className="text-slate-600 text-sm leading-relaxed">
-                    <strong>Full Paper Submission</strong> is strictly restricted to authors with accepted abstracts. 
-                    You will require your unique <strong>Paper ID</strong> (sent via email) to proceed. 
-                    Unsolicited full papers without an ID will not be processed.
+                   <strong>Extended Abstract Submission</strong> is strictly restricted to authors with accepted initial abstracts. 
+                   You will require your unique <strong>Paper ID</strong> (sent via email) to proceed. 
+                   Unsolicited submissions without an ID will not be processed.
                  </p>
               </div>
            </div>
@@ -151,14 +151,19 @@ export default function SubmissionPage() {
           {/* Step 1 */}
           <StepCard 
             number="01"
-            title="Submit Abstract"
-            desc="Begin by submitting a concise abstract (approx. 250 words) outlining your research objectives, methodology, and key findings. This will be reviewed for relevance to the conference tracks."
+            title="Submit Initial Abstract"
+            desc="All submissions must be in English. Please ensure your abstract includes a Title (max 20 words), a complete List of Authors (Name, Email, Affiliation), and a concise Abstract (max 300 words) outlining your objectives and methodology."
             icon={<MdDescription />}
             action={
               <div className="flex flex-wrap gap-4">
-                 <button className="px-6 py-3 bg-purple-700 text-white rounded-lg font-semibold shadow-lg hover:bg-purple-800 transition-all flex items-center gap-2">
+                 <a 
+                    href="https://forms.gle/WDckqAecHnAUya848" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-purple-700 text-white rounded-lg font-semibold shadow-lg hover:bg-purple-800 transition-all flex items-center gap-2"
+                  >
                     Submit Abstract <MdArrowForward />
-                 </button>
+                  </a>
                  <button className="px-6 py-3 bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold hover:bg-slate-50 transition-all flex items-center gap-2">
                     <MdFileDownload /> Template
                  </button>
@@ -177,12 +182,12 @@ export default function SubmissionPage() {
           {/* Step 3 */}
           <StepCard 
             number="03"
-            title="Submit Full Paper"
-            desc="Prepare your camera-ready full paper according to the Springer formatting guidelines (PDF format, Max 8 pages). The filename must be your Paper ID (e.g., '123.pdf')."
+            title="Submit Extended Abstract"
+            desc="Prepare your camera-ready extended abstract according to the conference formatting guidelines (PDF format). The filename must be your Paper ID (e.g., '123.pdf')."
             icon={<MdUploadFile />}
             action={
               <button className="px-6 py-3 bg-slate-900 text-white rounded-lg font-semibold shadow-lg hover:bg-slate-800 transition-all flex items-center gap-2">
-                Upload Full Paper <MdOpenInNew />
+                Upload Extended Abstract <MdOpenInNew />
               </button>
             }
           />
@@ -190,8 +195,8 @@ export default function SubmissionPage() {
           {/* Step 4 */}
           <StepCard 
             number="04"
-            title="Publication & Indexing"
-            desc="Accepted and presented papers will be submitted for publication in the proceedings. Authors will receive final instructions regarding the copyright transfer form and final metadata submission."
+            title="Publication"
+            desc="All extended abstracts will be published in ISBN-indexed conference proceedings."
             icon={<MdPublishedWithChanges />}
             isLast={true}
           />

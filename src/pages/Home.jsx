@@ -33,37 +33,22 @@ const staggerContainer = {
   },
 };
 
-// --- Data Constants (Strictly from Brochure) ---
+// --- Data Constants (Strictly 3 Tracks based on Topics) ---
 const TRACKS = [
   { 
-    title: "Robotics & Automation", 
-    desc: "Automation & Process Control, Autonomous Robots, Human Robot Collaboration, Industrial Robots, Intelligent Robots, Mechatronics, Trajectory Planning.",
-    icon: "🤖"
+    title: "Digital Innovation & Computing", 
+    desc: "Covering AR/VR, Metaverse, Cybersecurity, Ethical Hacking, Data Science, Quantum Computing, and Autonomous Systems.",
+    icon: "💻"
   },
   { 
-    title: "Industrial IoT & Cloud", 
-    desc: "Supply Chain 4.0, Resource Management, Cloud-based Smart Manufacturing, Cyber-physical Systems, Lean/Agile Manufacturing, Virtual Manufacturing.",
-    icon: "☁️" 
+    title: "Smart Mechanical Systems", 
+    desc: "Focusing on Industrial AI, Edge Computing, Green Manufacturing, Reliability, Safety, and Human-Centered Engineering.",
+    icon: "⚙️" 
   },
   { 
-    title: "Additive Manufacturing", 
-    desc: "Process Optimization, Modelling Simulation, Post-processing Advances, 3D Printing of Complex Geometries, Material Minimization, Reverse Engineering.",
-    icon: "🖨️"
-  },
-  { 
-    title: "Immersive Engineering", 
-    desc: "Augmented Reality, Virtual Reality, Computerized Simulation, Spatial Sensing, Mixed Reality, 3D Displays, Haptics, Behaviorism.",
-    icon: "👓"
-  },
-  { 
-    title: "Big Data & IoT", 
-    desc: "Algorithms, Cyber-physical Systems, Smart Devices, Performance Evaluation, Information Retrieval, Big Data Acquisition & Analytics.",
-    icon: "📊"
-  },
-  { 
-    title: "Artificial Intelligence", 
-    desc: "Machine Learning, Image/Video Processing, AI for Cyber Security, Audio Analysis, Deep Learning, AI Based Optimization for Industry.",
-    icon: "🧠"
+    title: "Electronics & Communication", 
+    desc: "Exploring VLSI, Chip Design, 6G Wireless, Signal Processing, AI Systems, and Digital Healthcare Technologies.",
+    icon: "📡"
   },
 ];
 
@@ -100,7 +85,7 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="mb-6 flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-slate-200 px-5 py-2 rounded-full shadow-sm">
                <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span>
                <span className="text-xs md:text-sm font-bold tracking-widest text-slate-500 uppercase">
-                 ICDTSES - Industry 4.0
+                 ICDTSES - Digital Innovation
                </span>
             </motion.div>
 
@@ -111,12 +96,12 @@ export default function Home() {
 
             {/* Titles */}
             <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 tracking-tight leading-[0.9] mb-6">
-              ICRAIT <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-600">2026</span>
+              ICDTSES <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-600">2026</span>
             </motion.h1>
 
-            <motion.p variants={fadeInUp} className="text-xl md:text-3xl font-light text-slate-600 mb-8 leading-snug max-w-3xl">
-              International Conference on Recent Advances in <br/>
-              <span className="font-semibold text-slate-900">Industry 4.0 Technologies</span>
+            <motion.p variants={fadeInUp} className="text-xl md:text-3xl font-light text-slate-600 mb-8 leading-snug max-w-4xl">
+              International Conference on Digital Technologies and <br/>
+              <span className="font-semibold text-slate-900">Smart Engineering Systems</span>
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-sm md:text-base font-medium text-slate-500 mb-10">
@@ -166,7 +151,7 @@ export default function Home() {
             <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Conference Tracks</h3>
             <div className="w-20 h-1 bg-yellow-400 mx-auto rounded-full"></div>
             <p className="mt-6 text-slate-600 text-lg">
-                Exploring cutting-edge developments in automation, data, and manufacturing.
+                Fostering interdisciplinary collaboration across three major domains.
             </p>
           </div>
 
@@ -236,7 +221,7 @@ export default function Home() {
                 <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Prof. Ram Bilas Pachori</h3>
                 <p className="text-purple-700 font-medium mb-4">Professor (HAG), Dept. of Electrical Engineering, IIT Indore</p>
                 <p className="text-slate-600 leading-relaxed italic">
-                  "Distinguished expert bringing insights into signal processing and AI applications for Industry 4.0."
+                  "Distinguished expert bringing insights into signal processing and AI applications for next-generation smart engineering solutions."
                 </p>
               </div>
             </motion.div>

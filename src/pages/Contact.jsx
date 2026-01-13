@@ -111,7 +111,7 @@ export default function ContactUs() {
         {/* Footer for Panel */}
         <div className="relative z-10 mt-16 pt-8 border-t border-white/10">
           <p className="text-xs text-indigo-300 uppercase tracking-widest">
-            ICRAIT - 2026
+            ICDTSES - 2026
           </p>
         </div>
       </motion.div>
@@ -136,7 +136,7 @@ export default function ContactUs() {
               <MdCheckCircle className="text-6xl text-green-500 mx-auto mb-6" />
               <h2 className="text-3xl font-bold text-green-900 mb-4">Inquiry Received</h2>
               <p className="text-green-700 text-lg">
-                Thank you for contacting the ICRAIT-2026 secretariat. We will address your query shortly.
+                Thank you for contacting the ICDTSES-2026 secretariat. We will address your query shortly.
               </p>
               <button 
                 onClick={() => setSubmitted(false)}
