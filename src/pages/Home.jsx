@@ -246,9 +246,9 @@ export default function Home() {
             
             <div className="text-center md:text-left">
               <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Prof. Ram Bilas Pachori</h3>
-              <p className="text-purple-700 font-medium mb-4">Professor (HAG), Dept. of Electrical Engineering, IIT Indore</p>
+              <p className="text-purple-700 font-medium mb-4">Institute Chair Professor & Professor (HAG), Department of Electrical Engineering, Indian Institute of Technology Indore</p>
               <p className="text-slate-600 leading-relaxed italic">
-                "Distinguished expert bringing insights into signal processing and AI applications for next-generation smart engineering solutions."
+                "Expertise in digital signal processing, biomedical applications, brain-computer interfaces, and AI/IoT in healthcare."
               </p>
             </div>
           </motion.div>
@@ -264,7 +264,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-yellow-400 rounded-full blur-2xl opacity-20"></div>
               <img 
                 src={suresh} 
-                alt="Prof. Suresh Atmakuri" 
+                alt="Suresh Atmakuri" 
                 className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-lg bg-white"
                 onError={(e) => { e.target.src="https://placehold.co/200x200?text=Prof.+Atmakuri" }}
               />
@@ -274,8 +274,8 @@ export default function Home() {
             </div>
             
             <div className="text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Prof. Suresh Atmakuri</h3>
-              <p className="text-purple-700 font-medium mb-4">Senior Staff Engineer/Manager, Qualcomm India Pvt Ltd.</p>
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Suresh Atmakuri</h3>
+              <p className="text-purple-700 font-medium mb-4">Senior ASIC Design Engineer experienced in RTL design and SystemVerilog.</p>
               <p className="text-slate-600 leading-relaxed italic">
                 "Expert in wireless communication systems and digital transformation in the semiconductor industry."
               </p>
