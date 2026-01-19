@@ -9,6 +9,10 @@ import {
   MdPerson
 } from "react-icons/md";
 
+import ronald from "../assets/speakers/ronald.jpg";
+import yedukondalarao from "../assets/speakers/rao.jpg";
+import ansuman from "../assets/images/GSMahapatra.jpg";
+
 // --- DATA (Strictly matched to Brochure) ---
 
 const CHIEF_PATRON = [
@@ -36,9 +40,9 @@ const PATRONS = [
 ];
 
 const CONVENERS = [
-  { name: "Dr. Ansuman Mahapatra", role: "Chairperson & Convener" },
-  { name: "Dr. J Ronald Aseer", role: "Chairperson & Convener" },
-  { name: "Dr. Yedukondalarao Veeranki", role: "Chairperson & Convener" }
+  { name: "Dr. Ansuman Mahapatra", role: "Chairperson & Convener", images: ansuman },
+  { name: "Dr. J Ronald Aseer", role: "Chairperson & Convener", images: ronald },
+  { name: "Dr. Yedukondalarao Veeranki", role: "Chairperson & Convener", images: yedukondalarao }
 ];
 
 const ADVISORY_BOARD = [
@@ -159,33 +163,64 @@ export default function CommitteesPage() {
       {/* ---------------------------------------------------------------------------
           SECTION 3: CONVENERS (Brochure Match)
       --------------------------------------------------------------------------- */}
-      <div className="bg-slate-900 py-24 text-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-serif font-bold text-white mb-3">Chairpersons & Conveners</h2>
-            <div className="h-1 w-24 bg-purple-500 mx-auto rounded-full"></div>
-          </div>
+<div className="bg-[#0B0F19] py-24 relative overflow-hidden">
+  {/* Optional: Ambient Background Glow for 'Sleek' look */}
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-900/20 rounded-full blur-[120px] pointer-events-none" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-             {CONVENERS.map((person, idx) => (
-                 <motion.div 
-                    key={idx}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl text-center hover:bg-white/10 transition-colors"
-                 >
-                    <div className="w-16 h-16 mx-auto bg-purple-600 rounded-full flex items-center justify-center mb-6 text-2xl shadow-lg shadow-purple-900/50">
-                        <MdPerson />
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-2">{person.name}</h3>
-                    <p className="text-purple-200 text-sm uppercase tracking-wider opacity-80">{person.role}</p>
-                 </motion.div>
-             ))}
+  <div className="container mx-auto px-6 relative z-10">
+    {/* Section Header */}
+    <div className="text-center mb-20">
+      <h2 className="text-4xl md:text-5xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-200 mb-6">
+        Chairpersons & Conveners
+      </h2>
+      <div className="h-1.5 w-24 bg-gradient-to-r from-purple-600 to-indigo-600 mx-auto rounded-full shadow-lg shadow-purple-900/50"></div>
+    </div>
+
+    {/* Cards Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {CONVENERS.map((person, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.15, duration: 0.5 }}
+          className="group relative"
+        >
+          {/* Card Background & Border */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/0 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          
+          <div className="relative h-full bg-slate-900/60 backdrop-blur-md border border-white/10 p-8 rounded-2xl flex flex-col items-center text-center transition-transform duration-300 group-hover:-translate-y-2 group-hover:border-purple-500/30 shadow-xl">
+            
+            {/* Image Container with Ring Effect */}
+            <div className="relative mb-6">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full blur-md opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative w-28 h-28 rounded-full p-1 bg-gradient-to-br from-white/20 to-white/5">
+                <img
+                  src={person.images}
+                  alt={person.name}
+                  className="w-full h-full rounded-full object-cover border-2 border-slate-900/80"
+                />
+              </div>
+            </div>
+
+            {/* Text Content */}
+            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-200 transition-colors">
+              {person.name}
+            </h3>
+            
+            {/* Divider */}
+            <div className="w-12 h-0.5 bg-white/10 my-3 group-hover:bg-purple-500/50 transition-colors" />
+
+            <p className="text-slate-400 text-sm font-medium uppercase tracking-widest group-hover:text-white transition-colors">
+              {person.role}
+            </p>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</div>
 
       {/* ---------------------------------------------------------------------------
           SECTION 4: ADVISORY MEMBERS (Exact List)
