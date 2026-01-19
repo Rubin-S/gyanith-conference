@@ -15,7 +15,7 @@ import {
 import nitpy from "../assets/logo/NITPY.png"; 
 import suresh from "../assets/speakers/suresh.jpeg"; 
 
-import pachori from "../assets/speakers/suresh.jpeg";
+import pachori from "../assets/speakers/pachori.jpeg";
 // Leadership Images
 import directorImg from "../assets/images/Director.jpg";
 import registrarImg from "../assets/images/Sundaravarathan.jpg";
@@ -284,7 +284,7 @@ export default function Home() {
 
         </div>
       </div>
-      
+
 {/* --- Patrons / Leadership Section --- */}
           <div className="border-t border-slate-100 pt-20">
             <div className="text-center mb-16">

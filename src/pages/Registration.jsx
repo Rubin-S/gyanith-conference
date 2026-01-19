@@ -193,7 +193,7 @@ export default function Registration() {
       rel="noopener noreferrer"
       className="px-8 py-4 bg-slate-900 text-white rounded-full font-bold shadow-xl hover:bg-purple-700 transition-all transform hover:-translate-y-1 flex items-center gap-3"
     >
-      Select plan <MdArrowForward className="text-xl" />
+      Register here <MdArrowForward className="text-xl" />
     </a>
   </div>
 </div>
