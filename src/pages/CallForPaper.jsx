@@ -17,8 +17,19 @@ import {
 // --- DATA: UPDATED WITH NEW TOPICS ---
 
 const TRACKS = [
-  {
+    {
     id: 1,
+    title: "Electronics & Communication",
+    icon: <MdWifiTethering />, // Icon for Comms/Electronics
+    topics: [
+      "Digital Healthcare & Biomedical Technologies",
+      "Digital VLSI, Semiconductors & Chip Design Innovation",
+      "Digital Signal Processing, AI & Intelligent Systems",
+      "Digital Wireless & 6G Communication Technologies"
+    ]
+  },
+  {
+    id: 2,
     title: "Digital Innovation & Computing",
     icon: <MdComputer />, // Icon for Computing
     topics: [
@@ -30,7 +41,7 @@ const TRACKS = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     title: "Smart Mechanical Systems",
     icon: <MdSettingsSuggest />, // Icon for Mechanical
     topics: [
@@ -40,17 +51,6 @@ const TRACKS = [
       "Digital Reliability, Safety & Risk Assessment",
       "Sustainable Digital Engineering",
       "Green Manufacturing Technologies"
-    ]
-  },
-  {
-    id: 3,
-    title: "Electronics & Communication",
-    icon: <MdWifiTethering />, // Icon for Comms/Electronics
-    topics: [
-      "Digital Healthcare & Biomedical Technologies",
-      "Digital VLSI, Semiconductors & Chip Design Innovation",
-      "Digital Signal Processing, AI & Intelligent Systems",
-      "Digital Wireless & 6G Communication Technologies"
     ]
   }
 ];
@@ -231,33 +231,11 @@ export default function CallForPapers() {
                        </div>
                     ))}
                  </div>
-                 <div className="bg-slate-800 p-6 text-center border-t border-white/10">
-                    <button className="w-full py-3 bg-white text-slate-900 rounded-lg font-bold hover:bg-yellow-400 transition-colors duration-300">
-                       Proceed to Payment
-                    </button>
-                 </div>
               </div>
             </div>
 
           </div>
         </div>
-      </div>
-
-      {/* ---------------------------------------------------------------------------
-          BOTTOM CTA
-      --------------------------------------------------------------------------- */}
-      <div className="bg-[#3d348b] py-20 text-center">
-         <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-serif font-bold text-white mb-6">Ready to Submit your Research?</h2>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-               <button className="px-8 py-4 bg-yellow-500 text-slate-900 rounded-full font-bold shadow-lg hover:bg-yellow-400 hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
-                  Submit Paper <MdArrowForward />
-               </button>
-               <button className="px-8 py-4 bg-transparent border border-white/30 text-white rounded-full font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2">
-                  <MdFileDownload size={20} /> Download Template
-               </button>
-            </div>
-         </div>
       </div>
 
     </div>

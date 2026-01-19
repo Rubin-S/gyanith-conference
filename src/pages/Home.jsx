@@ -10,10 +10,16 @@ import {
   MdGroups
 } from "react-icons/md";
 
-// --- Assets (Ensure these exist in your assets folder) ---
+// --- Assets ---
+// Ensure these paths match your project structure exactly
 import nitpy from "../assets/logo/NITPY.png"; 
-// Ideally, use a photo of Prof. Pachori here
-import pachori from "../assets/logo/NITPY.png"; 
+import suresh from "../assets/speakers/suresh.jpeg"; 
+
+import pachori from "../assets/speakers/suresh.jpeg";
+// Leadership Images
+import directorImg from "../assets/images/Director.jpg";
+import registrarImg from "../assets/images/Sundaravarathan.jpg";
+import deanImg from "../assets/images/GSMahapatra.jpg";
 
 // --- Animation Variants ---
 const fadeInUp = {
@@ -36,6 +42,11 @@ const staggerContainer = {
 // --- Data Constants (Strictly 3 Tracks based on Topics) ---
 const TRACKS = [
   { 
+    title: "Electronics & Communication", 
+    desc: "Exploring VLSI, Chip Design, 6G Wireless, Signal Processing, AI Systems, and Digital Healthcare Technologies.",
+    icon: "📡"
+  },
+  { 
     title: "Digital Innovation & Computing", 
     desc: "Covering AR/VR, Metaverse, Cybersecurity, Ethical Hacking, Data Science, Quantum Computing, and Autonomous Systems.",
     icon: "💻"
@@ -45,17 +56,27 @@ const TRACKS = [
     desc: "Focusing on Industrial AI, Edge Computing, Green Manufacturing, Reliability, Safety, and Human-Centered Engineering.",
     icon: "⚙️" 
   },
-  { 
-    title: "Electronics & Communication", 
-    desc: "Exploring VLSI, Chip Design, 6G Wireless, Signal Processing, AI Systems, and Digital Healthcare Technologies.",
-    icon: "📡"
-  },
 ];
 
 const LEADERSHIP = [
-    { name: "Prof. Makarand Madhao Ghangrekar", role: "Chief Patron", title: "Director, NIT Puducherry" },
-    { name: "Dr. Sundaravarathan S", role: "Patron", title: "Registrar, NIT Puducherry" },
-    { name: "Dr. G S Mahapatra", role: "Co-Patron", title: "Dean (R&C), NIT Puducherry" },
+  { 
+    name: "Prof. Makarand Madhao Ghangrekar", 
+    role: "Chief Patron", 
+    title: "Director, NIT Puducherry", 
+    image: directorImg 
+  },
+  { 
+    name: "Dr. Sundaravarathan S", 
+    role: "Patron", 
+    title: "Registrar, NIT Puducherry", 
+    image: registrarImg 
+  },
+  { 
+    name: "Dr. G S Mahapatra", 
+    role: "Co-Patron", 
+    title: "Dean (R&C), NIT Puducherry", 
+    image: deanImg 
+  },
 ];
 
 export default function Home() {
@@ -192,45 +213,82 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           
-          {/* Keynote */}
-          <div className="mb-24">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Keynote Speaker</h2>
+    {/* Keynote Speakers Section */}
+      <div className="mb-24">
+        
+        {/* Title */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Keynote Speakers</h2>
+        </div>
+        
+        {/* Container - Added flex and gap to separate the cards */}
+        <div className="flex flex-col gap-12">
+
+          {/* Speaker 1: Prof. Pachori */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto w-full bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 md:p-12 border border-slate-100 shadow-xl flex flex-col md:flex-row gap-10 items-center transform hover:scale-[1.01] transition-transform duration-300"
+          >
+            <div className="relative w-48 h-48 shrink-0">
+              <div className="absolute inset-0 bg-yellow-400 rounded-full blur-2xl opacity-20"></div>
+              <img 
+                src={pachori} 
+                alt="Prof. Ram Bilas Pachori" 
+                className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-lg bg-white"
+                onError={(e) => { e.target.src="https://placehold.co/200x200?text=Prof.+Pachori" }}
+              />
+              <div className="absolute bottom-2 right-2 bg-purple-600 text-white p-2 rounded-full shadow-md">
+                 <MdMic size={20} />
+              </div>
             </div>
             
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 md:p-12 border border-slate-100 shadow-xl flex flex-col md:flex-row gap-10 items-center"
-            >
-              <div className="relative w-48 h-48 shrink-0">
-                <div className="absolute inset-0 bg-yellow-400 rounded-full blur-2xl opacity-20"></div>
-                <img 
-                  src={pachori} 
-                  alt="Prof. Ram Bilas Pachori" 
-                  className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-lg"
-                  onError={(e) => { e.target.src="https://placehold.co/200x200?text=Prof.+Pachori" }}
-                />
-                <div className="absolute bottom-2 right-2 bg-purple-600 text-white p-2 rounded-full shadow-md">
-                   <MdMic />
-                </div>
-              </div>
-              
-              <div className="text-center md:text-left">
-                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Prof. Ram Bilas Pachori</h3>
-                <p className="text-purple-700 font-medium mb-4">Professor (HAG), Dept. of Electrical Engineering, IIT Indore</p>
-                <p className="text-slate-600 leading-relaxed italic">
-                  "Distinguished expert bringing insights into signal processing and AI applications for next-generation smart engineering solutions."
-                </p>
-              </div>
-            </motion.div>
-          </div>
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Prof. Ram Bilas Pachori</h3>
+              <p className="text-purple-700 font-medium mb-4">Professor (HAG), Dept. of Electrical Engineering, IIT Indore</p>
+              <p className="text-slate-600 leading-relaxed italic">
+                "Distinguished expert bringing insights into signal processing and AI applications for next-generation smart engineering solutions."
+              </p>
+            </div>
+          </motion.div>
 
-          {/* Patrons / Leadership */}
+          {/* Speaker 2: Prof. Suresh */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto w-full bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 md:p-12 border border-slate-100 shadow-xl flex flex-col md:flex-row gap-10 items-center transform hover:scale-[1.01] transition-transform duration-300"
+          >
+            <div className="relative w-48 h-48 shrink-0">
+              <div className="absolute inset-0 bg-yellow-400 rounded-full blur-2xl opacity-20"></div>
+              <img 
+                src={suresh} 
+                alt="Prof. Suresh Atmakuri" 
+                className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-lg bg-white"
+                onError={(e) => { e.target.src="https://placehold.co/200x200?text=Prof.+Atmakuri" }}
+              />
+              <div className="absolute bottom-2 right-2 bg-purple-600 text-white p-2 rounded-full shadow-md">
+                 <MdMic size={20} />
+              </div>
+            </div>
+            
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Prof. Suresh Atmakuri</h3>
+              <p className="text-purple-700 font-medium mb-4">Senior Staff Engineer/Manager, Qualcomm India Pvt Ltd.</p>
+              <p className="text-slate-600 leading-relaxed italic">
+                "Expert in wireless communication systems and digital transformation in the semiconductor industry."
+              </p>
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
+      
+{/* --- Patrons / Leadership Section --- */}
           <div className="border-t border-slate-100 pt-20">
             <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Chief Patrons & Conveners</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Chief Patrons</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -241,31 +299,43 @@ export default function Home() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="text-center p-6 rounded-2xl hover:bg-slate-50 transition-colors"
+                        className="text-center p-6 rounded-2xl hover:bg-slate-50 transition-colors group cursor-default"
                     >
-                        <div className="w-20 h-20 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center text-slate-400">
-                            <MdGroups size={30} />
+                        <div className="w-32 h-32 bg-slate-200 rounded-full mx-auto mb-6 flex items-center justify-center text-slate-400 overflow-hidden border-4 border-transparent group-hover:border-purple-200 transition-all shadow-md">
+                            {leader.image ? (
+                                <img 
+                                    src={leader.image} 
+                                    alt={leader.name} 
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => { e.target.style.display='none'; e.target.nextSibling.style.display='block'; }} 
+                                />
+                            ) : (
+                                <MdGroups size={48} />
+                            )}
+                            <MdGroups size={48} className="hidden" /> 
                         </div>
-                        <h4 className="text-lg font-bold text-slate-900">{leader.name}</h4>
-                        <p className="text-purple-600 text-sm font-semibold mb-1">{leader.role}</p>
-                        <p className="text-slate-500 text-sm">{leader.title}</p>
+                        <h4 className="text-xl font-bold text-slate-900 leading-tight mb-2">{leader.name}</h4>
+                        <div className="inline-block px-3 py-1 bg-purple-50 text-purple-700 text-sm font-semibold rounded-full mb-3">
+                            {leader.role}
+                        </div>
+                        <p className="text-slate-500 text-sm leading-relaxed">{leader.title}</p>
                     </motion.div>
                 ))}
             </div>
             
             {/* Brief Mention of Conveners */}
-            <div className="text-center mt-12 pt-8 border-t border-slate-100">
-                <p className="text-slate-500 text-sm uppercase tracking-wide mb-4">Chairpersons & Conveners</p>
-                <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 font-medium text-slate-700">
-                    <span>Dr. Ansuman Mahapatra</span>
-                    <span className="text-slate-300">•</span>
-                    <span>Dr. J Ronald Aseer</span>
-                    <span className="text-slate-300">•</span>
-                    <span>Dr. Yedukondalarao Veeranki</span>
+            <div className="text-center mt-16 pt-10 border-t border-slate-100">
+                <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-6">Conference Chairpersons & Conveners</p>
+                <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 font-medium text-lg text-slate-700">
+                    <span className="hover:text-purple-700 transition-colors cursor-default">Dr. Ansuman Mahapatra</span>
+                    <span className="text-slate-300 hidden sm:inline">•</span>
+                    <span className="hover:text-purple-700 transition-colors cursor-default">Dr. J Ronald Aseer</span>
+                    <span className="text-slate-300 hidden sm:inline">•</span>
+                    <span className="hover:text-purple-700 transition-colors cursor-default">Dr. Yedukondalarao Veeranki</span>
                 </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </section>
 

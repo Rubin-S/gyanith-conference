@@ -164,9 +164,6 @@ export default function SubmissionPage() {
                   >
                     Submit Abstract <MdArrowForward />
                   </a>
-                 <button className="px-6 py-3 bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold hover:bg-slate-50 transition-all flex items-center gap-2">
-                    <MdFileDownload /> Template
-                 </button>
               </div>
             }
           />

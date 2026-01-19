@@ -22,7 +22,7 @@ const FEES = [
     icon: <MdSchool />,
     price: "₹ 500",
     subtitle: "Indian Delegate",
-    features: ["Paper Presentation", "Conference Kit", "Certificate", "Lunch & Refreshments"],
+    features: ["Paper Presentation","Certificate"],
     highlight: false
   },
   {
@@ -31,7 +31,7 @@ const FEES = [
     icon: <MdAccountBalance />,
     price: "₹ 800",
     subtitle: "Indian Delegate",
-    features: ["Paper Presentation", "Conference Kit", "Certificate", "Networking Session"],
+    features: ["Paper Presentation", "Certificate"],
     highlight: true // Giving this a subtle visual pop
   },
   {
@@ -40,7 +40,7 @@ const FEES = [
     icon: <MdBusiness />,
     price: "₹ 1,000",
     subtitle: "Indian Delegate",
-    features: ["Paper Presentation", "Company Representation", "VIP Seating", "Networking Dinner"],
+    features: ["Paper Presentation", "Company Representation"],
     highlight: false
   },
   {
@@ -49,7 +49,7 @@ const FEES = [
     icon: <MdPublic />,
     price: "25 USD",
     subtitle: "International",
-    features: ["Full Access", "Digital Certificate", "Proceedings", "International Networking"],
+    features: ["Full Access", "Digital Certificate", "Proceedings"],
     highlight: false
   },
   {
@@ -126,76 +126,77 @@ export default function Registration() {
       {/* ---------------------------------------------------------------------------
           PRICING CARDS
       --------------------------------------------------------------------------- */}
-      <div className="container mx-auto px-6 py-24">
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
-          variants={containerVar}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {FEES.map((tier) => (
-            <motion.div 
-              key={tier.id}
-              variants={cardVar}
-              className={`relative flex flex-col justify-between rounded-2xl p-6 border transition-all duration-300 group
-                ${tier.highlight 
-                  ? 'bg-white border-purple-200 shadow-xl scale-105 z-10' 
-                  : 'bg-slate-50 border-slate-100 hover:bg-white hover:shadow-lg hover:border-purple-100'
-                }
-              `}
-            >
-              {tier.highlight && (
-                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-yellow-400 text-slate-900 text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow-sm">
-                   Most Popular
-                 </div>
-              )}
+<div className="container mx-auto px-6 py-24">
+  {/* Grid Container */}
+  <motion.div 
+    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mb-16"
+    variants={containerVar}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+  >
+    {FEES.map((tier) => (
+      <motion.div 
+        key={tier.id}
+        variants={cardVar}
+        className={`relative flex flex-col justify-between rounded-2xl p-6 border transition-all duration-300 group h-full
+          ${tier.highlight 
+            ? 'bg-white border-purple-200 shadow-xl scale-105 z-10' 
+            : 'bg-slate-50 border-slate-100 hover:bg-white hover:shadow-lg hover:border-purple-100'
+          }
+        `}
+      >
+        {tier.highlight && (
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-yellow-400 text-slate-900 text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow-md whitespace-nowrap">
+            Most Popular
+          </div>
+        )}
 
-              <div>
-                {/* Header */}
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4 transition-colors
-                   ${tier.highlight ? 'bg-purple-100 text-purple-700' : 'bg-white text-slate-400 group-hover:bg-purple-50 group-hover:text-purple-600'}
-                `}>
-                  {tier.icon}
-                </div>
-                
-                <h3 className="text-lg font-bold text-slate-900 mb-1">{tier.title}</h3>
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-6">{tier.subtitle}</p>
+        <div className="flex-grow">
+          {/* Header */}
+          <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4 transition-colors
+              ${tier.highlight ? 'bg-purple-100 text-purple-700' : 'bg-white text-slate-400 group-hover:bg-purple-50 group-hover:text-purple-600'}
+          `}>
+            {tier.icon}
+          </div>
+          
+          <h3 className="text-lg font-bold text-slate-900 mb-1">{tier.title}</h3>
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-6">{tier.subtitle}</p>
 
-                {/* Price */}
-                <div className="mb-8">
-                  <span className={`text-2xl font-serif font-bold ${tier.highlight ? 'text-purple-700' : 'text-slate-800'}`}>
-                    {tier.price}
-                  </span>
-                </div>
+          {/* Price */}
+          <div className="mb-8">
+            <span className={`text-2xl font-serif font-bold ${tier.highlight ? 'text-purple-700' : 'text-slate-800'}`}>
+              {tier.price}
+            </span>
+          </div>
 
-                {/* Features */}
-                <ul className="space-y-3 mb-8">
-                  {tier.features.map((feat, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs font-medium text-slate-600 leading-snug">
-                      <MdCheckCircle className={`text-sm flex-shrink-0 mt-0.5 ${tier.highlight ? 'text-yellow-500' : 'text-slate-300 group-hover:text-purple-400'}`} />
-                      {feat}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          {/* Features */}
+          <ul className="space-y-3 mb-8">
+            {tier.features.map((feat, i) => (
+              <li key={i} className="flex items-start gap-2 text-xs font-medium text-slate-600 leading-snug">
+                <MdCheckCircle className={`text-sm flex-shrink-0 mt-0.5 ${tier.highlight ? 'text-yellow-500' : 'text-slate-300 group-hover:text-purple-400'}`} />
+                {feat}
+              </li>
+            ))}
+          </ul>
+        </div>
 
-              {/* Action */}
-              <button 
-                onClick={() => handleRegister(tier.title, tier.price)}
-                className={`w-full py-3 rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2
-                  ${tier.highlight 
-                    ? 'bg-purple-600 text-white hover:bg-purple-700 shadow-lg shadow-purple-900/20' 
-                    : 'bg-white border border-slate-200 text-slate-600 hover:border-slate-800 hover:text-slate-900'
-                  }
-                `}
-              >
-                Select Plan <MdArrowForward />
-              </button>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+      </motion.div>
+    ))}
+  </motion.div>
+
+  {/* Centered Footer Action */}
+  <div className="flex flex-col items-center justify-center space-y-4">
+    <a 
+      href="https://forms.gle/5svVUi6pBWMhNDjN9" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="px-8 py-4 bg-slate-900 text-white rounded-full font-bold shadow-xl hover:bg-purple-700 transition-all transform hover:-translate-y-1 flex items-center gap-3"
+    >
+      Select plan <MdArrowForward className="text-xl" />
+    </a>
+  </div>
+</div>
 
       {/* ---------------------------------------------------------------------------
           PROCESS STEPS

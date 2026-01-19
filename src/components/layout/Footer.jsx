@@ -32,16 +32,14 @@ export default function Footer() {
               <img src={logo} alt="NITPY Logo" className="h-12 w-auto object-contain" />
             </div>
             <div>
-              <h3 className="text-white font-serif font-bold text-xl mb-2 tracking-wide">ICRAIT - 2026</h3>
+              <h3 className="text-white font-serif font-bold text-xl mb-2 tracking-wide">ICDTSES - 2026</h3>
               <p className="text-sm leading-relaxed text-slate-400">
-                International Conference on Recent Advances in <br/> Industry 4.0 Technologies.
+                International Conference on Digital Technologies and <br/> Smart Engineering Systems.
               </p>
             </div>
             <div className="pt-4">
               <p className="text-xs font-bold text-yellow-500 uppercase tracking-widest mb-2">Organized By</p>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Depts. of Mechanical Engineering & <br/>
-                Computer Science Engineering,<br/>
                 NIT Puducherry
               </p>
             </div>
