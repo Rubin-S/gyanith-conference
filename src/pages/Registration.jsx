@@ -20,7 +20,7 @@ const FEES = [
     id: "student",
     title: "Student / Scholar",
     icon: <MdSchool />,
-    price: "₹ 500",
+    price: "₹ 200",
     subtitle: "Indian Delegate",
     features: ["Paper Presentation","Certificate"],
     highlight: false
@@ -29,7 +29,7 @@ const FEES = [
     id: "academia",
     title: "Academia",
     icon: <MdAccountBalance />,
-    price: "₹ 800",
+    price: "₹ 400",
     subtitle: "Indian Delegate",
     features: ["Paper Presentation", "Certificate"],
     highlight: true // Giving this a subtle visual pop
@@ -38,7 +38,7 @@ const FEES = [
     id: "industry",
     title: "Industry",
     icon: <MdBusiness />,
-    price: "₹ 1,000",
+    price: "₹ 800",
     subtitle: "Indian Delegate",
     features: ["Paper Presentation", "Company Representation"],
     highlight: false
@@ -56,7 +56,7 @@ const FEES = [
     id: "attendee",
     title: "Attendee",
     icon: <MdGroups />,
-    price: "₹ 500 / 10 USD",
+    price: "₹ 100 / 10 USD",
     subtitle: "Indian / Foreign",
     features: ["Access to Sessions", "Participation Certificate", "Observer Status", "Knowledge Exchange"],
     highlight: false
