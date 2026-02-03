@@ -182,7 +182,7 @@ export default function SubmissionPage() {
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-purple-700 text-white rounded-lg font-semibold shadow-lg hover:bg-purple-800 transition-all flex items-center gap-2"
                 >
-                  Abstract Template <MdFileDownload />
+                  <MdFileDownload /> Abstract Template
                 </a>
               </div>
             }
