@@ -63,11 +63,11 @@ const DATES = [
 ];
 
 const FEES = [
-  { category: "Student / Scholar", amount: "₹ 500" },
-  { category: "Academia", amount: "₹ 800" },
-  { category: "Industry", amount: "₹ 1,000" },
+  { category: "Student / Scholar", amount: "₹ 200" },
+  { category: "Academia", amount: "₹ 400" },
+  { category: "Industry", amount: "₹ 800" },
   { category: "Foreign Delegates", amount: "25 USD" },
-  { category: "Attendee", amount: "₹ 500 / 10 USD" },
+  { category: "Attendee", amount: "₹ 100 / 10 USD" },
 ];
 
 // --- ANIMATION VARIANTS ---
