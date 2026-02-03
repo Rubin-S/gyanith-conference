@@ -177,7 +177,7 @@ export default function SubmissionPage() {
                 </a>
 
                 <a
-                  href="assets/Abstract Submission Format - ICOFT 2021.docx"
+                  href="assets/Abstract Submission Format.docx"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-purple-700 text-white rounded-lg font-semibold shadow-lg hover:bg-purple-800 transition-all flex items-center gap-2"
