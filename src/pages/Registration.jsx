@@ -188,6 +188,14 @@ export default function Registration() {
   {/* Centered Footer Action */}
   <div className="flex flex-col items-center justify-center space-y-4">
     <a 
+      href="https://gyanith.org/events/tech/tech_6994b818002154469eb4" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="px-8 py-4 bg-slate-900 text-white rounded-full font-bold shadow-xl hover:bg-purple-700 transition-all transform hover:-translate-y-1 flex items-center gap-3"
+    >
+      Pay now <MdArrowForward className="text-xl" />
+    </a>
+    <a 
       href="https://forms.gle/5svVUi6pBWMhNDjN9" 
       target="_blank" 
       rel="noopener noreferrer"
