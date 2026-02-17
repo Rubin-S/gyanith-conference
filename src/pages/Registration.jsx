@@ -234,7 +234,7 @@ export default function Registration() {
           >
             {/* Pay Now Button */}
             <a
-              href="https://gyanith.org/events/tech/tech_6994b818002154469eb4"
+              href="https://gyanith.org/icdtses"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-yellow-500 to-amber-500 text-slate-900 rounded-full font-bold text-lg shadow-lg shadow-yellow-500/25 hover:shadow-xl hover:shadow-yellow-500/40 hover:-translate-y-1 transition-all duration-300"
