@@ -1,10 +1,10 @@
 // src/pages/CallForPapers.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  MdSmartToy, 
-  MdCloudSync, 
-  MdViewInAr, 
+import {
+  MdSmartToy,
+  MdCloudSync,
+  MdViewInAr,
   MdDateRange,
   MdAttachMoney,
   MdArrowForward,
@@ -17,7 +17,7 @@ import {
 // --- DATA: UPDATED WITH NEW TOPICS ---
 
 const TRACKS = [
-    {
+  {
     id: 1,
     title: "Electronics & Communication",
     icon: <MdWifiTethering />, // Icon for Comms/Electronics
@@ -87,14 +87,14 @@ const itemVar = {
 export default function CallForPapers() {
   return (
     <div className="bg-white min-h-screen font-sans text-slate-800 selection:bg-yellow-200 selection:text-purple-900">
-      
+
       {/* ---------------------------------------------------------------------------
           HERO SECTION
       --------------------------------------------------------------------------- */}
-      <div className="relative pt-32 pb-20 bg-slate-900 overflow-hidden">
-         {/* Background Decoration */}
-         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-900/40 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-yellow-600/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+      <div className="relative pt-32 pb-20 bg-[#3d348b] text-white overflow-hidden">
+        {/* Background Decoration */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-900/40 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-yellow-600/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
@@ -103,9 +103,9 @@ export default function CallForPapers() {
             transition={{ duration: 0.8 }}
           >
             <div className="inline-block py-2 px-6 rounded-full border border-yellow-500/50 bg-yellow-500/10 backdrop-blur-md mb-6">
-               <span className="text-yellow-400 font-bold tracking-widest uppercase text-xs">Submission Open</span>
+              <span className="text-yellow-400 font-bold tracking-widest uppercase text-xs">Submission Open</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-serif font-medium text-white mb-6">
               Call for Papers
             </h1>
@@ -125,11 +125,11 @@ export default function CallForPapers() {
             <h2 className="text-3xl font-serif font-bold text-slate-900 mb-3">Conference Tracks</h2>
             <div className="h-1 w-24 bg-purple-600 mx-auto rounded-full"></div>
             <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-                Exploring the intersection of Computing, Mechanical Systems, and Communication Technologies.
+              Exploring the intersection of Computing, Mechanical Systems, and Communication Technologies.
             </p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVar}
             initial="hidden"
@@ -137,7 +137,7 @@ export default function CallForPapers() {
             viewport={{ once: true, amount: 0.05 }}
           >
             {TRACKS.map((track) => (
-              <motion.div 
+              <motion.div
                 key={track.id}
                 variants={itemVar}
                 className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group"
@@ -152,7 +152,7 @@ export default function CallForPapers() {
                     </h3>
                   </div>
                 </div>
-                
+
                 <ul className="space-y-4">
                   {track.topics.map((topic, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
@@ -176,61 +176,61 @@ export default function CallForPapers() {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row gap-16">
-            
+
             {/* LEFT: Dates Timeline */}
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-10">
-                 <div className="p-3 bg-purple-100 text-purple-700 rounded-lg">
-                    <MdDateRange size={24} />
-                 </div>
-                 <h2 className="text-3xl font-serif font-bold text-slate-900">Important Dates</h2>
+                <div className="p-3 bg-purple-100 text-purple-700 rounded-lg">
+                  <MdDateRange size={24} />
+                </div>
+                <h2 className="text-3xl font-serif font-bold text-slate-900">Important Dates</h2>
               </div>
 
               <div className="space-y-6 relative border-l-2 border-slate-100 ml-4 pl-8">
-                 {DATES.map((item, idx) => (
-                   <div key={idx} className="relative">
-                     {/* Dot */}
-                     <span className={`absolute -left-[41px] top-1 w-6 h-6 rounded-full border-4 border-white ${item.highlight ? 'bg-yellow-400 shadow-md' : 'bg-slate-300'}`}></span>
-                     
-                     <h4 className={`text-lg font-bold ${item.highlight ? 'text-purple-700' : 'text-slate-800'}`}>
-                       {item.date}
-                     </h4>
-                     <p className="text-slate-500 uppercase tracking-wide text-sm font-medium mt-1">
-                       {item.label}
-                     </p>
-                   </div>
-                 ))}
+                {DATES.map((item, idx) => (
+                  <div key={idx} className="relative">
+                    {/* Dot */}
+                    <span className={`absolute -left-[41px] top-1 w-6 h-6 rounded-full border-4 border-white ${item.highlight ? 'bg-yellow-400 shadow-md' : 'bg-slate-300'}`}></span>
+
+                    <h4 className={`text-lg font-bold ${item.highlight ? 'text-purple-700' : 'text-slate-800'}`}>
+                      {item.date}
+                    </h4>
+                    <p className="text-slate-500 uppercase tracking-wide text-sm font-medium mt-1">
+                      {item.label}
+                    </p>
+                  </div>
+                ))}
               </div>
 
               <div className="mt-12 p-6 bg-yellow-50 border border-yellow-100 rounded-xl">
-                 <p className="text-yellow-800 text-sm italic">
-                   * Note: All deadlines are final. Late submissions may not be considered for the primary proceedings.
-                 </p>
+                <p className="text-yellow-800 text-sm italic">
+                  * Note: All deadlines are final. Late submissions may not be considered for the primary proceedings.
+                </p>
               </div>
             </div>
 
             {/* RIGHT: Fees Card */}
             <div className="flex-1">
-               <div className="flex items-center gap-3 mb-10">
-                 <div className="p-3 bg-green-100 text-green-700 rounded-lg">
-                    <MdAttachMoney size={24} />
-                 </div>
-                 <h2 className="text-3xl font-serif font-bold text-slate-900">Registration Fees</h2>
+              <div className="flex items-center gap-3 mb-10">
+                <div className="p-3 bg-green-100 text-green-700 rounded-lg">
+                  <MdAttachMoney size={24} />
+                </div>
+                <h2 className="text-3xl font-serif font-bold text-slate-900">Registration Fees</h2>
               </div>
 
               <div className="bg-slate-900 text-white rounded-2xl overflow-hidden shadow-2xl">
-                 <div className="bg-purple-800 p-6">
-                    <h3 className="text-xl font-bold">Standard Registration</h3>
-                    <p className="text-purple-200 text-sm">Includes access to all sessions and kit.</p>
-                 </div>
-                 <div className="p-2">
-                    {FEES.map((fee, idx) => (
-                       <div key={idx} className={`flex justify-between items-center p-5 ${idx !== FEES.length -1 ? 'border-b border-white/10' : ''}`}>
-                          <span className="font-medium text-slate-300">{fee.category}</span>
-                          <span className="font-bold text-yellow-400 text-lg">{fee.amount}</span>
-                       </div>
-                    ))}
-                 </div>
+                <div className="bg-purple-800 p-6">
+                  <h3 className="text-xl font-bold">Standard Registration</h3>
+                  <p className="text-purple-200 text-sm">Includes access to all sessions and kit.</p>
+                </div>
+                <div className="p-2">
+                  {FEES.map((fee, idx) => (
+                    <div key={idx} className={`flex justify-between items-center p-5 ${idx !== FEES.length - 1 ? 'border-b border-white/10' : ''}`}>
+                      <span className="font-medium text-slate-300">{fee.category}</span>
+                      <span className="font-bold text-yellow-400 text-lg">{fee.amount}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
