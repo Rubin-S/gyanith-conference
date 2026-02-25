@@ -1,19 +1,17 @@
 // src/pages/Registration.jsx
-import React, { useCallback } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   MdSchool,
   MdBusiness,
   MdPublic,
   MdCheckCircle,
-  MdArrowForward,
   MdGroups,
   MdAccountBalance,
   MdCreditCard,
   MdCameraAlt,
   MdUploadFile
 } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 
 // --- DATA (Strictly from Brochure Image 2) ---
 const FEES = [
@@ -79,14 +77,6 @@ const cardVar = {
 };
 
 export default function Registration() {
-  const navigate = useNavigate();
-
-  const handleRegister = useCallback((category, price) => {
-    // Navigate to a form page or payment gateway logic
-    console.log(`Registering for ${category} at ${price}`);
-    navigate("/contact-us"); // Redirecting to contact for now as per flow
-  }, [navigate]);
-
   return (
     <div className="bg-white min-h-screen font-sans text-slate-800 selection:bg-yellow-200 selection:text-purple-900">
 
@@ -109,16 +99,16 @@ export default function Registration() {
           >
             <div className="inline-block px-4 py-1 mb-6 border border-yellow-400/30 bg-yellow-400/10 rounded-full">
               <span className="text-yellow-400 font-bold tracking-widest uppercase text-xs">
-                Registration Open
+                Registration Closed
               </span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-serif font-medium mb-6">
-              Secure Your Spot
+              Registration Closed
             </h1>
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-indigo-100 font-light leading-relaxed">
-              Select your participation category below. <br />
-              Registration includes access to all technical tracks and keynote sessions.
+              Thank you for your interest. <br />
+              The registration window has ended and new submissions are not being accepted.
             </p>
           </motion.div>
         </div>
@@ -203,9 +193,9 @@ export default function Registration() {
             <div className="hidden md:block absolute top-12 left-1/6 right-1/6 h-0.5 bg-slate-200 -z-10"></div>
 
             {[
-              { title: "Pay & Screenshot", icon: <MdCreditCard />, desc: "Click the \"Pay Now\" button below, complete your payment, and take a screenshot of the payment confirmation." },
-              { title: "Click Register Here", icon: <MdCameraAlt />, desc: "Come back to this page and click the \"Register Here\" button. A Google Form will open for you to fill in your details." },
-              { title: "Upload Screenshot", icon: <MdUploadFile />, desc: "In the Google Form, upload the payment screenshot you captured earlier to complete your registration." },
+              { title: "Registration Closed", icon: <MdCreditCard />, desc: "The conference registration period has ended." },
+              { title: "New Submissions Locked", icon: <MdCameraAlt />, desc: "The registration form is disabled and no new entries can be submitted." },
+              { title: "Need Assistance?", icon: <MdUploadFile />, desc: "Please contact the conference team for any registration-related clarification." },
             ].map((step, i) => (
               <motion.div
                 key={i}
@@ -232,29 +222,14 @@ export default function Registration() {
             transition={{ delay: 0.4 }}
             className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-5"
           >
-            {/* Pay Now Button */}
-            <a
-              href="https://gyanith.org/icdtses"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-yellow-500 to-amber-500 text-slate-900 rounded-full font-bold text-lg shadow-lg shadow-yellow-500/25 hover:shadow-xl hover:shadow-yellow-500/40 hover:-translate-y-1 transition-all duration-300"
+            <button
+              type="button"
+              disabled
+              className="inline-flex items-center gap-3 px-10 py-4 bg-slate-300 text-slate-700 rounded-full font-bold text-lg shadow-md cursor-not-allowed opacity-90"
             >
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/30 text-sm font-black">1</span>
-              Pay Now
-              <MdArrowForward className="text-xl transition-transform group-hover:translate-x-1" />
-            </a>
-
-            {/* Register Here Button */}
-            <a
-              href="https://forms.gle/5svVUi6pBWMhNDjN9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-[#3d348b] to-purple-700 text-white rounded-full font-bold text-lg shadow-lg shadow-purple-700/25 hover:shadow-xl hover:shadow-purple-700/40 hover:-translate-y-1 transition-all duration-300"
-            >
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/20 text-sm font-black">2</span>
-              Register Here
-              <MdArrowForward className="text-xl transition-transform group-hover:translate-x-1" />
-            </a>
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/70 text-sm font-black">!</span>
+              Registrations Closed
+            </button>
           </motion.div>
         </div>
       </section>
